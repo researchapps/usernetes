@@ -29,7 +29,10 @@ cgroupsPerQOS: true
 enforceNodeAllocatable: []
 EOF
 
-mkdir -p $HOME/usernetes/containerd
+# Debugging
+echo "Additional args are $@"
+
+# mkdir -p $HOME/usernetes/containerd
 exec $(dirname $0)/nsenter.sh kubelet \
 	--cert-dir $XDG_CONFIG_HOME/usernetes/pki \
 	--root-dir $XDG_DATA_HOME/usernetes/kubelet \
