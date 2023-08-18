@@ -181,7 +181,7 @@ fi
 mkdir -p ${config_dir}/usernetes
 cat /dev/null >${config_dir}/usernetes/env
 cat <<EOF >>${config_dir}/usernetes/env
-U7S_ROOTLESSKIT_PORTS=${publish}
+U7S_ROOTLESSKIT_PORTS="${publish}"
 EOF
 if [ "$cni" = "flannel" ]; then
 	cat <<EOF >>${config_dir}/usernetes/env

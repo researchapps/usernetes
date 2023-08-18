@@ -20,6 +20,7 @@ clusterDNS:
 failSwapOn: false
 featureGates:
   KubeletInUserNamespace: true
+# containerRuntimeEndpoint: "unix://$HOME/usernetes/containerd/containerd.sock"
 evictionHard:
   nodefs.available: "3%"
 localStorageCapacityIsolation: false
@@ -28,6 +29,10 @@ cgroupsPerQOS: true
 enforceNodeAllocatable: []
 EOF
 
+# Debugging
+echo "Additional args are $@"
+
+# mkdir -p $HOME/usernetes/containerd
 exec $(dirname $0)/nsenter.sh kubelet \
 	--cert-dir $XDG_CONFIG_HOME/usernetes/pki \
 	--root-dir $XDG_DATA_HOME/usernetes/kubelet \
