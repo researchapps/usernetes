@@ -107,6 +107,9 @@ make logs
 make shell
 make down-v
 kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+
+# Remove all containers
+make rm
 ```
 
 The container engine defaults to Docker.

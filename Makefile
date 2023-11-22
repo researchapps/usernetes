@@ -71,6 +71,10 @@ down:
 down-v:
 	$(COMPOSE) down -v
 
+.PHONY: rm
+rm:
+	$(COMPOSE) rm
+
 .PHONY: shell
 shell:
 	$(NODE_SHELL) bash
